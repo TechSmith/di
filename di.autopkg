@@ -1,0 +1,56 @@
+configurations {
+   Toolset {
+      key : "PlatformToolset";
+      choices: { v140 };
+   };
+}
+
+nuget
+{
+   nuspec
+   {
+      id = Boost.DI;
+      version: 1.0.0.0;
+      title: Boost.DI;
+      authors: { Kris Jusiak };
+      owners: { Boost };
+      licenseUrl: "https://www.boost.org/LICENSE_1_0.txt";
+      projectUrl: "https://github.com/TechSmith/di";
+      iconUrl: "http://www.techsmith.com/favicon.ico";
+      requireLicenseAcceptance: false;
+      summary: Boost.DI Dependency Injection Library;
+      releaseNotes: "";
+      description: @"A single header only dependency injection library.
+         New features:
+            v 1.0.0 First release
+         Bug fixes:
+         Misc:"
+
+      copyright: "Copyright (c) 2012-2018 Kris Jusiak";
+      tags: { native, di, dependency, injection, boost, cpp };
+   };
+
+   files
+   {
+      nestedInclude:  { #destination = ${d_include}di; Include\boost\di.hpp };
+   };
+
+   props
+   {
+      // Additional declarations to insert into consuming projects before most of the
+      // project settings. (These may be modified in visual studio by a developer
+      // consuming this package.)
+      // This node is typically not needed for most packages and may be omitted.
+   }
+
+   targets
+   {
+      // Additional declarations to insert into consuming projects after most of the
+      // project settings. (These may NOT be modified in visual studio by a developer
+      // consuming this package.)
+      // This node is often used to set defines that are required that must be set by
+      // the consuming project in order to correctly link to the libraries in this
+      // package.  Such defines may be set either globally or only set under specific
+      // conditions.
+    }
+}
